@@ -140,7 +140,6 @@ const reasignaPacientesAMedicoFamilia = (pacientes: Pacientes[]): Pacientes[] =>
     for (let i = 0; i < pacientes.length; i++) {
       if (pacientes[i].especialidad === "Pediatra") {
         indicePaciente = i;
-        break;
       }
     }
   
