@@ -184,3 +184,36 @@ console.log(
   );
 
 //APARTADO 5
+interface NumeroPacientesPorEspecialidad {
+    medicoDeFamilia: number;
+    pediatria: number;
+    cardiologia: number;
+}
+  
+const cuentaPacientesPorEspecialidad = (pacientes: Pacientes[]): NumeroPacientesPorEspecialidad => {
+let medicoDeFamilia = 0;
+let pediatria  = 0;
+let cardiologia  = 0;
+
+    for (let i = 0; i < pacientes.length; i++) {
+        if (pacientes[i].especialidad === "Medico de familia") {
+            medicoDeFamilia++;
+        } else if (pacientes[i].especialidad === "Pediatra"){
+            pediatria++;
+        } else {
+            cardiologia++;
+        }
+    };
+
+    const resultado : NumeroPacientesPorEspecialidad = {
+        medicoDeFamilia: medicoDeFamilia,
+        pediatria: pediatria,
+        cardiologia: cardiologia,
+    }
+
+    return resultado;
+
+}
+
+console.log("APARTADO 5:");
+console.log(cuentaPacientesPorEspecialidad(pacientes));
